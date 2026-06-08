@@ -1,0 +1,23 @@
+﻿{
+    "name":  "Edufi",
+    "url":  "https://join.edufi.co",
+    "description":  "",
+    "industry":  "",
+    "hasContactForm":  true,
+    "expectedNavItems":  [
+
+                         ],
+    "viewports":  [
+                      "desktop",
+                      "mobile",
+                      "tablet"
+                  ],
+    "skipVisual":  false,
+    "skipForms":  false,
+    "auth":  {
+                 "required":  false,
+                 "loginUrl":  "",
+                 "username":  "",
+                 "password":  ""
+             }
+}
