@@ -1,3 +1,14 @@
+---
+name: site-analyzer
+description: Crawl a live website and produce a fully-populated site.config.json. Use when onboarding a new site, verifying an existing config after a redesign, or running /analyze-site.
+model: claude-haiku-4-5-20251001
+tools:
+  - Read
+  - Write
+  - WebFetch
+  - Glob
+---
+
 # Agent: site-analyzer
 
 ## Role

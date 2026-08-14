@@ -1,23 +1,17 @@
-﻿{
-    "name":  "Edufi",
-    "url":  "https://join.edufi.co",
-    "description":  "",
-    "industry":  "",
-    "hasContactForm":  true,
-    "expectedNavItems":  [
-
-                         ],
-    "viewports":  [
-                      "desktop",
-                      "mobile",
-                      "tablet"
-                  ],
-    "skipVisual":  false,
-    "skipForms":  false,
-    "auth":  {
-                 "required":  false,
-                 "loginUrl":  "",
-                 "username":  "",
-                 "password":  ""
-             }
+{
+  "name": "Playwright TodoMVC Demo",
+  "url": "https://demo.playwright.dev/todomvc",
+  "description": "Official Playwright TodoMVC demo app — a classic todo list application",
+  "industry": "Demo / Testing",
+  "hasContactForm": false,
+  "expectedNavItems": [],
+  "viewports": ["desktop", "mobile", "tablet"],
+  "skipVisual": false,
+  "skipForms": true,
+  "auth": {
+    "required": false,
+    "loginUrl": "",
+    "username": "",
+    "password": ""
+  }
 }

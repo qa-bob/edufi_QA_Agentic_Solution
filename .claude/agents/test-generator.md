@@ -1,3 +1,17 @@
+---
+name: test-generator
+description: Generate site-specific Playwright test files beyond the generic suite. Use when a site has unique functionality (pricing calculator, video embeds, live chat), when selectors need site-specific tuning, or when writing regression tests for a discovered bug.
+model: claude-sonnet-4-6
+tools:
+  - Read
+  - Write
+  - Edit
+  - Glob
+  - Grep
+  - WebFetch
+  - Bash
+---
+
 # Agent: test-generator
 
 ## Role

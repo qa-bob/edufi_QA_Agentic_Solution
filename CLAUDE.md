@@ -1,5 +1,7 @@
 # QA Agentic Solution — Claude Code Instructions
 
+@AGENTS.md
+
 This repository is a **Playwright + TypeScript regression test suite** for the website defined in `site.config.json`. It follows a **Page Object Model (POM)** architecture and is structured for agentic execution by Claude Code.
 
 ---
@@ -26,7 +28,7 @@ Build and maintain a comprehensive GUI, functional, and regression test suite fo
 | `tests/functional/` | @functional — business logic, user flows |
 | `tests/visual/` | @visual — screenshot regression |
 | `tests/responsive/` | @responsive — layout at mobile/tablet/desktop |
-| `.claude/commands/` | Slash commands for agentic tasks |
+| `.claude/commands/` | Slash commands (skills) for agentic tasks — see `Skills.md` |
 
 ---
 
