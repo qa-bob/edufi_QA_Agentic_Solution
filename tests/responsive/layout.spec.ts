@@ -2,7 +2,8 @@ import { test, expect } from '@fixtures/site.fixture';
 
 test.describe('Responsive Layout @responsive', () => {
 
-  test('no horizontal scrollbar at mobile viewport (390px) @responsive', async ({ page, siteConfig }) => {
+  test('no horizontal scrollbar at mobile viewport (390px) @responsive', async ({ page, siteConfig }, testInfo) => {
+    test.skip(testInfo.project.name !== 'mobile-chrome', 'Runs only in the "mobile-chrome" project');
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto(siteConfig.url);
     const hasHScroll = await page.evaluate<boolean>(
@@ -11,7 +12,8 @@ test.describe('Responsive Layout @responsive', () => {
     expect(hasHScroll).toBe(false);
   });
 
-  test('no horizontal scrollbar at tablet viewport (768px) @responsive', async ({ page, siteConfig }) => {
+  test('no horizontal scrollbar at tablet viewport (768px) @responsive', async ({ page, siteConfig }, testInfo) => {
+    test.skip(testInfo.project.name !== 'tablet', 'Runs only in the "tablet" project');
     await page.setViewportSize({ width: 768, height: 1024 });
     await page.goto(siteConfig.url);
     const hasHScroll = await page.evaluate<boolean>(
@@ -20,7 +22,8 @@ test.describe('Responsive Layout @responsive', () => {
     expect(hasHScroll).toBe(false);
   });
 
-  test('todo input is visible and usable on mobile @responsive', async ({ page, siteConfig }) => {
+  test('todo input is visible and usable on mobile @responsive', async ({ page, siteConfig }, testInfo) => {
+    test.skip(testInfo.project.name !== 'mobile-chrome', 'Runs only in the "mobile-chrome" project');
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto(siteConfig.url);
     const input = page.locator('.new-todo');
@@ -30,20 +33,22 @@ test.describe('Responsive Layout @responsive', () => {
     await expect(page.locator('.todo-list li')).toHaveCount(1);
   });
 
-  test('todo items are readable (font-size >= 12px) on mobile @responsive', async ({ page, siteConfig }) => {
+  test('todo items are readable (font-size >= 12px) on mobile @responsive', async ({ page, siteConfig }, testInfo) => {
+    test.skip(testInfo.project.name !== 'mobile-chrome', 'Runs only in the "mobile-chrome" project');
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto(siteConfig.url);
     const input = page.locator('.new-todo');
     await input.fill('check font size');
     await input.press('Enter');
 
-    const fontSize = await page.locator('.todo-list li label').evaluate<number>((el) => {
+    const fontSize = await page.locator('.todo-list li label').evaluate((el) => {
       return parseFloat(getComputedStyle(el).fontSize);
     });
     expect(fontSize).toBeGreaterThanOrEqual(12);
   });
 
-  test('app does not cause horizontal scroll without a viewport meta tag @responsive', async ({ page, siteConfig }) => {
+  test('app does not cause horizontal scroll without a viewport meta tag @responsive', async ({ page, siteConfig }, testInfo) => {
+    test.skip(testInfo.project.name !== 'mobile-chrome', 'Runs only in the "mobile-chrome" project');
     // The Playwright TodoMVC demo intentionally omits <meta name="viewport">.
     // This test verifies the layout still doesn't overflow horizontally.
     await page.setViewportSize({ width: 390, height: 844 });
@@ -54,7 +59,8 @@ test.describe('Responsive Layout @responsive', () => {
     expect(hasHScroll).toBe(false);
   });
 
-  test('new-todo input accepts text at any viewport width @responsive', async ({ page, siteConfig }) => {
+  test('new-todo input accepts text at any viewport width @responsive', async ({ page, siteConfig }, testInfo) => {
+    test.skip(testInfo.project.name !== 'mobile-chrome', 'Runs only in the "mobile-chrome" project');
     // TodoMVC has no <meta name="viewport"> — layout renders at the browser default CSS viewport.
     // We verify the input is functional (visible and writable) rather than checking pixel position,
     // since the layout viewport width varies by browser project without a viewport meta tag.
